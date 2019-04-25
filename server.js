@@ -2,6 +2,9 @@ const express = require('express')
 const app = express()
 const methodOverride = require('method-override')
 
+app.get('/', (req, res) => {
+    res.send("hello world")
+})
 
 //Include middleware
 app.use(express.json())
