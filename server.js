@@ -32,6 +32,13 @@ app.get('/users/:id', (req, res) => {
     });
 });
 
+app.post('/users', (req, res) => {
+    userApi.createUser(req.body)
+    .then(() => {
+        res.send('user/created');
+    });
+});
+
 const PORT = process.env.PORT || 3000
 
 app.listen(PORT, () => {
