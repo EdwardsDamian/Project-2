@@ -1,20 +1,29 @@
 const express = require('express')
 const app = express()
 const methodOverride = require('method-override')
+const userApi = require('./api/userApi')
 
-app.get('/', (req, res) => {
-    res.send("hello world")
-})
 
-//Include middleware
-app.use(express.json())
-app.use(express.urlencoded({extended:true}))
-app.use(methodOverride('_method'))
-
+//Set up handlebars
+app.set('view engine', 'hbs')
 app.use(express.static(__dirname + '/public'))
 
-app.set('view engine', 'hbs')
+//Middleware for handling html forms where body is a query string
+app.use(express.urlencoded({extended:true}))
 
+
+app.use(express.json())
+
+// The html forms 'hack' that allows PUT/PATCH/DELETE
+app.use(methodOverride('_method'))
+
+
+app.get('/users', (req, res) => {
+    userApi.getUsers()
+    .then(users => {
+    res.send(users);
+    });    
+});
 
 const PORT = process.env.PORT || 3000
 
