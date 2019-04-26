@@ -21,7 +21,7 @@ app.use(methodOverride('_method'))
 app.get('/users', (req, res) => {
     userApi.getUsers()
     .then(users => {
-    res.send(users);
+    res.render('users/users', { users });
     });    
 });
 

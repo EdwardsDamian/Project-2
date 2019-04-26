@@ -1,0 +1,13 @@
+<h1>Users</h1>
+<ul>
+    {{#each users}}
+    <li>
+        {{!-- <a href="/users/{{_id}}"> --}}
+        <label for="id">ID: </label> {{_id}} <br>
+        <label for="name">NAME: </label> {{ name }} <br>
+        <label for="age">AGE: </label> {{ age }} <br>
+        <label for="grade">GRADE: </label> {{ grade}} <br>
+        </a>
+    </li>
+    {{/each}}
+</ul>
