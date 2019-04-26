@@ -25,6 +25,13 @@ app.get('/users', (req, res) => {
     });    
 });
 
+app.get('/users/:id', (req, res) => {
+    userApi.getUserById(req.params.id)
+    .then(userId => {
+        res.send(userId);
+    });
+});
+
 const PORT = process.env.PORT || 3000
 
 app.listen(PORT, () => {

@@ -33,3 +33,8 @@ userApi.createUser({
         }).then(newUser => {
     console.log(newUser);
 });
+
+userApi.getUserById("5cc317df7c3d328a98f572d5")
+    .then(userId => {
+        console.log(userId);
+    });
