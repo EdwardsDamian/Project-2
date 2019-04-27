@@ -2,7 +2,8 @@ const express = require('express')
 const app = express()
 const methodOverride = require('method-override')
 const userApi = require('./api/userApi')
-
+const homeworkAPI = require('./api/homeworkApi')
+const activitiesApi = require('./api/activitiesApi')
 
 //Set up handlebars
 app.set('view engine', 'hbs')
@@ -17,6 +18,18 @@ app.use(express.json())
 // The html forms 'hack' that allows PUT/PATCH/DELETE
 app.use(methodOverride('_method'))
 
+app.get('/users/:id/agenda', (req, res) => {
+    userApi.getUserById(req.params.id)
+    .then(user => {
+        homeworkAPI.getHomeworkByUserId(req.params.id)
+        .then(homework => {
+            activitiesApi.getActivitiesByUserId(req.params.id)
+            .then(activities => {
+                res.render('users/user', {user, homework, activities})
+            })
+        })
+    })
+})
 
 app.get('/users', (req, res) => {
     userApi.getUsers()
