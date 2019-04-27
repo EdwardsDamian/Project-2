@@ -21,8 +21,14 @@ function getUserById(userId) {
     return UserCollection.findById(userId);
 }
 
+function updateUser(userId, user) {
+    
+    return UserCollection.updateOne({_id:userId}, user)
+}
+
 module.exports = {
     createUser,
     getUsers,
-    getUserById
+    getUserById,
+    updateUser
 }

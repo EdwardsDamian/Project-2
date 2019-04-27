@@ -35,9 +35,17 @@ app.get('/users/:id', (req, res) => {
 app.post('/users', (req, res) => {
     userApi.createUser(req.body)
     .then(() => {
-        res.send('user/created');
+        res.render('users/created', { users } );
     });
 });
+
+app.put('/users/:id', (req, res) => {
+    userApi.updateUser(req.params.id, req.body)
+      .then(() => {
+        res.send(req.params.id)
+      })
+})
+
 
 const PORT = process.env.PORT || 3000
 
