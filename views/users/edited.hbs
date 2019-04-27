@@ -1,0 +1,11 @@
+<h1>Edit User Information</h1>
+
+<form action="/users/{{user._id}}?_method=PUT" method="POST" >
+    <label for="name">NAME:</label>
+    <input type="text" name="name" value="{{user.name}}" />
+    <label for="age">AGE:</label>
+    <input type="text" name="age" value="{{user.age}}" />
+    <label for="grade">GRADE:</label>
+    <input type="text" name="grade" value="{{user.grade}}" />
+    <input type="submit" value="Update User" />
+</form>

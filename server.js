@@ -27,24 +27,26 @@ app.get('/users', (req, res) => {
 
 app.get('/users/:id', (req, res) => {
     userApi.getUserById(req.params.id)
-    .then(userId => {
-        res.send(userId);
+    .then(user => {
+        res.render('users/edited', {user});
     });
 });
 
 app.post('/users', (req, res) => {
     userApi.createUser(req.body)
-    .then(() => {
+    .then(() => userApi.getUsers())
+    .then((users) => {
         res.render('users/created', { users } );
     });
 });
 
 app.put('/users/:id', (req, res) => {
     userApi.updateUser(req.params.id, req.body)
+    .then(() => userApi.getUsers())
       .then(() => {
-        res.send(req.params.id)
-      })
-})
+        res.render('users/updated');
+      });
+});
 
 app.delete('/users/:id', (req, res) => {
     userApi.deleteUser(req.params.id)
