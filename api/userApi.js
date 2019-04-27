@@ -27,7 +27,7 @@ function updateUser(userId, user) {
 }
 
 function deleteUser(userId) {
-    return UserCollection.deleteOne({_id:userId})
+    return UserCollection.findByIdAndDelete(userId)
 }
 
 module.exports = {

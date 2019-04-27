@@ -50,8 +50,8 @@ app.put('/users/:id', (req, res) => {
 
 app.delete('/users/:id', (req, res) => {
     userApi.deleteUser(req.params.id)
-    .then(() => {
-        res.send(req.params.id)
+    .then((user) => {
+        res.render('users/deleted', {user})
     })
 })
 
