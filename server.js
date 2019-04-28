@@ -2,7 +2,7 @@ const express = require('express')
 const app = express()
 const methodOverride = require('method-override')
 const userApi = require('./api/userApi')
-const homeworkAPI = require('./api/homeworkApi')
+const homeworkApi = require('./api/homeworkApi')
 const activitiesApi = require('./api/activitiesApi')
 
 //Set up handlebars
@@ -21,7 +21,7 @@ app.use(methodOverride('_method'))
 app.get('/users/:id/agenda', (req, res) => {
     userApi.getUserById(req.params.id)
     .then(user => {
-        homeworkAPI.getHomeworkByUserId(req.params.id)
+        homeworkApi.getHomeworkByUserId(req.params.id)
         .then(homework => {
             activitiesApi.getActivitiesByUserId(req.params.id)
             .then(activities => {
@@ -47,17 +47,19 @@ app.get('/users/:id', (req, res) => {
 
 app.post('/users', (req, res) => {
     userApi.createUser(req.body)
-    .then(() => userApi.getUsers())
-    .then((users) => {
-        res.render('users/created', { users } );
+    .then(() => userApi.getUserById(req.params.id))
+    .then((user) => {
+        console.log(user)
+        res.render('users/created', { user } );
     });
 });
 
 app.put('/users/:id', (req, res) => {
     userApi.updateUser(req.params.id, req.body)
-    .then(() => userApi.getUsers())
-      .then(() => {
-        res.render('users/updated');
+        .then(() => userApi.getUserById(req.params.id)) 
+      .then((user) => {
+          console.log(user)
+        res.render('users/updated', {user});
       });
 });
 
@@ -68,17 +70,71 @@ app.delete('/users/:id', (req, res) => {
     })
 })
 
-app.get('/homework', (req, res) => {
-    homeworkAPI.getHomeworkByUserId(req.param.id)
+app.get('/homework/:id', (req, res) => {
+    homeworkApi.getHomeworkByUserId(req.params.id)
     .then(homework => {
+        console.log(req.params.id)
+        console.log(homework)
         res.render('homework/edited', {homework})
     })
 })
 
 app.post('/homework', (req, res) => {
-
+    homeworkApi.createHomework(req.body)
+    .then(homework => {
+        res.render('homework/created', { homework})
+    })
 })
 
+app.put('/homework/:id', (req, res) => {
+    homeworkApi.updateHomework(req.params.id, req.body)
+    .then(() => homeworkApi.getHomeworkById(req.params.id))
+      .then(() => {
+        res.render('homework/updated');
+      });
+});
+
+app.delete('/homework/:id', (req, res) => {
+    homeworkApi.deleteHomework(req.params.id)
+    .then(homework => {
+        res.render('homework/deleted', {homework})
+    })
+})
+
+app.get('/activities/:id', (req, res) => {
+    activitiesApi.getActivitiesByUserId(req.params.id)
+    .then(activities => {
+        console.log(req.params.id)
+        console.log(activities)
+        res.render('activities/edited', {activities, userId: req.params.id})
+    })
+})
+
+app.post('/activities', (req, res) => {
+    activitiesApi.createActivities(req.body)
+    .then(() => activitiesApi.getActivitiesByUserId(req.body.user))
+    .then(activities => {
+        console.log(activities)
+        res.render('activities/created', { activities })
+    })
+})
+
+app.put('/activities/:id', (req, res) => {
+    activitiesApi.updateActivities(req.params.id, req.body)
+    .then(() => activitiesApi.getActivitiesById(req.params.id))
+
+      .then((activities) => {
+          console.log(activities)
+        res.render('activities/updated', {activities});
+      });
+});
+
+app.delete('/activities/:id', (req, res) => {
+    activitiesApi.deleteActivities(req.params.id)
+    .then(activities => {
+        res.render('activities/deleted', {activities})
+    })
+})
 const PORT = process.env.PORT || 3000
 
 app.listen(PORT, () => {

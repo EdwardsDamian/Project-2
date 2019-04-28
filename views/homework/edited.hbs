@@ -1,12 +1,12 @@
 <h1>Edit Homework</h1>
-
-<form action="/homework/{{homework._id}}?_method=PUT" method="POST" >
+{{!-- if homework is not null then update homework (PUT), otherwise create homework (POST) --}}
+<form action="/homework/{{#if homework}}{{homework._id}}?_method=PUT{{/if}}" method="POST" >
     <label for="readingMinutes">Reading (minutes): </label>{{homework.readingMinutes}}
-    <input type="number" name="readingMinutes" placeholder="{{homework.readingMinutes}}" /><br>
+    <input type="number" name="readingMinutes" value="{{homework.readingMinutes}}" /><br>
     <label for="mathAssigned">Math Homework Assigned (If yes, check box): </label>{{ homework.mathAssigned }}
-    <input type="checkbox" name="mathAssigned" placeholder="{{homework.mathAssigned}}" /><br>
+    <input type="checkbox" name="mathAssigned" value="true" {{#if homework.mathAssigned}}checked{{/if}} /><br>
     <label for="mathCompleted">Math Homework Completed (If yes, check box): </label>{{ homework.mathCompleted }}
-    <input type="checkbox" name="mathCompleted" placeholder="{{homework.mathCompleted}}" /><br>
+    <input type="checkbox" name="mathCompleted" value="true" {{#if homework.mathCompleted}}checked{{/if}} /><br>
     <input type="submit" value="Update Homework" />
 </form><br><br>
 

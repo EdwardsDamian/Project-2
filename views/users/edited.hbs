@@ -2,11 +2,11 @@
 
 <form action="/users/{{user._id}}?_method=PUT" method="POST" >
     <label for="name">NAME:</label>
-    <input type="text" name="name" placeholder="{{user.name}}" />
+    <input type="text" name="name" value="{{user.name}}" />
     <label for="age">AGE:</label>
-    <input type="text" name="age" placeholder="{{user.age}}" />
+    <input type="text" name="age" value="{{user.age}}" />
     <label for="grade">GRADE:</label>
-    <input type="text" name="grade" placeholder="{{user.grade}}" />
+    <input type="text" name="grade" value="{{user.grade}}" />
     <input type="submit" value="Update User" />
 </form><br><br>
 

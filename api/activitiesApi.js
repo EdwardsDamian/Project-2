@@ -19,7 +19,8 @@ function createActivities (activities) {
 }
 
 function getActivitiesByUserId (userId) {
-    return ActivitiesCollection.findOne({user:userId})
+    console.log("userId", userId)
+    return ActivitiesCollection.findOne({user:userId}).populate("user")
 }
 
 
