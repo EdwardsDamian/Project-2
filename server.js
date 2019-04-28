@@ -68,6 +68,17 @@ app.delete('/users/:id', (req, res) => {
     })
 })
 
+app.get('/homework', (req, res) => {
+    homeworkAPI.getHomeworkByUserId(req.param.id)
+    .then(homework => {
+        res.render('homework/edited', {homework})
+    })
+})
+
+app.post('/homework', (req, res) => {
+
+})
+
 const PORT = process.env.PORT || 3000
 
 app.listen(PORT, () => {

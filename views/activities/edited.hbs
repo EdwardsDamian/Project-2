@@ -1,0 +1,24 @@
+<h1>Edit Activities</h1>
+
+<form action="/activities/{{activities._id}}?_method=PUT" method="POST" >
+    <label for="sunday">Sunday: </label>{{activities.sunday}}
+    <input type="text" name="sunday" placeholder="{{activities.sunday}}" /><br>
+    <label for="monday">Monday: </label>{{activities.monday}}
+    <input type="text" name="monday" placeholder="{{activities.monday}}" /><br>
+    <label for="tuesday">Tuesday: </label>{{activities.tuesday}}
+    <input type="text" name="tuesday" placeholder="{{activities.tuesday}}" /><br>
+    <label for="wednesday">Wednesday: </label>{{activities.wednesday}}
+    <input type="text" name="wednesday" placeholder="{{activities.wednesday}}" /><br>
+    <label for="thursday">Thursday: </label>{{activities.thursday}}
+    <input type="text" name="thursday" placeholder="{{activities.thursday}}" /><br>
+    <label for="friday">Friday: </label>{{activities.friday}}
+    <input type="text" name="friday" placeholder="{{activities.friday}}" /><br>
+    <label for="saturday">Saturday: </label>{{activities.saturday}}
+    <input type="text" name="saturday" placeholder="{{activities.saturday}}" /><br>
+    <input type="submit" value="Update Activities" />
+</form><br><br>
+
+
+<form action="/activities/{{activities._id}}?_method=DELETE" method="POST" >
+<input type="submit" value="Delete Activities" />
+</form>
