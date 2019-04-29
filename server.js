@@ -92,15 +92,15 @@ app.post('/homework', (req, res) => {
     })
 })
 
-// app.put('/homework/:id', (req, res) => {
-//     homeworkApi.updateHomework(req.params.id, req.body)
-//     .then(() => homeworkApi.getHomeworkById(req.params.id))
-//       .then((homework) => {
-//         res.render('homework/updated', {homework});
-//         // res.redirect(`/user/${req.params.id}/agenda`)
-//       });
-// });
-
+app.put('/homework/:id', (req, res) => {
+    console.log("Updating homework ", req.body)
+    homeworkApi.updateHomework(req.params.id, req.body)
+    .then(() => homeworkApi.getHomeworkById(req.params.id))
+      .then((homework) => {
+        res.render('homework/updated', {homework});
+        // res.redirect(`/user/${req.params.id}/agenda`)
+      });
+});
 
 app.delete('/homework/:id', (req, res) => {
     homeworkApi.deleteHomework(req.params.id)
