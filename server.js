@@ -18,6 +18,7 @@ app.use(express.json())
 // The html forms 'hack' that allows PUT/PATCH/DELETE
 app.use(methodOverride('_method'))
 
+// Get individual user's id use as the reference to link to homework and activities
 app.get('/users/:id/agenda', (req, res) => {
     userApi.getUserById(req.params.id)
     .then(user => {
@@ -31,6 +32,7 @@ app.get('/users/:id/agenda', (req, res) => {
     })
 })
 
+
 app.get('/users', (req, res) => {
     userApi.getUsers()
     .then(users => {
@@ -38,6 +40,7 @@ app.get('/users', (req, res) => {
     });    
 });
 
+// Create new user (get before post)
 app.get('/users/:id', (req, res) => {
     userApi.getUserById(req.params.id)
     .then(user => {
@@ -54,6 +57,7 @@ app.post('/users', (req, res) => {
     });
 });
 
+// Update users info
 app.put('/users/:id', (req, res) => {
     userApi.updateUser(req.params.id, req.body)
         .then(() => userApi.getUserById(req.params.id)) 
@@ -63,6 +67,7 @@ app.put('/users/:id', (req, res) => {
       });
 });
 
+// Delete user
 app.delete('/users/:id', (req, res) => {
     userApi.deleteUser(req.params.id)
     .then((user) => {
@@ -75,7 +80,7 @@ app.get('/homework/:id', (req, res) => {
     .then(homework => {
         console.log(req.params.id)
         console.log(homework)
-        res.render('homework/edited', {homework})
+        res.render('homework/edited', {homework, userId: req.params.id})
     })
 })
 
@@ -83,16 +88,19 @@ app.post('/homework', (req, res) => {
     homeworkApi.createHomework(req.body)
     .then(homework => {
         res.render('homework/created', { homework})
+   
     })
 })
 
-app.put('/homework/:id', (req, res) => {
-    homeworkApi.updateHomework(req.params.id, req.body)
-    .then(() => homeworkApi.getHomeworkById(req.params.id))
-      .then(() => {
-        res.render('homework/updated');
-      });
-});
+// app.put('/homework/:id', (req, res) => {
+//     homeworkApi.updateHomework(req.params.id, req.body)
+//     .then(() => homeworkApi.getHomeworkById(req.params.id))
+//       .then((homework) => {
+//         res.render('homework/updated', {homework});
+//         // res.redirect(`/user/${req.params.id}/agenda`)
+//       });
+// });
+
 
 app.delete('/homework/:id', (req, res) => {
     homeworkApi.deleteHomework(req.params.id)
@@ -111,6 +119,7 @@ app.get('/activities/:id', (req, res) => {
 })
 
 app.post('/activities', (req, res) => {
+    console.log("Creating activities ", req.body)
     activitiesApi.createActivities(req.body)
     .then(() => activitiesApi.getActivitiesByUserId(req.body.user))
     .then(activities => {
@@ -120,6 +129,7 @@ app.post('/activities', (req, res) => {
 })
 
 app.put('/activities/:id', (req, res) => {
+    console.log("Updating activities ", req.body)
     activitiesApi.updateActivities(req.params.id, req.body)
     .then(() => activitiesApi.getActivitiesById(req.params.id))
 

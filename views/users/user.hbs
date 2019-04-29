@@ -1,14 +1,14 @@
 <h1>User's Agenda</h1>
-<ul> 
+<ul>
     <li>
         <label for="name">NAME: </label>{{ user.name }}<br>
         <label for="age">AGE: </label>{{ user.age }}<br>
         <label for="grade">GRADE: </label>{{ user.grade}}<br>
         <form method="GET" action="/users/{{user._id}}">
-        <input type="submit" value="Edit" />
+            <input type="submit" value="Edit" />
         </form>
     </li><br>
- </ul>
+</ul>
 
 <h2>Homework Status</h2>
 <ul>
@@ -16,8 +16,8 @@
         <label for="readingMinutes">Reading (minutes): </label>{{homework.readingMinutes}}<br>
         <label for="mathAssigned">Math Homework Assigned (Yes/No): </label>{{ homework.mathAssigned }}<br>
         <label for="mathCompleted">Math Homework Completed (Yes/No): </label>{{ homework.mathCompleted }}<br>
-        <form method="GET" action="/homework/{{homework._id}}">
-        <input type="submit" value="Edit" />
+        <form method="GET" action="/homework/{{user._id}}">
+            <input type="submit" value="Edit" />
         </form>
     </li><br>
 </ul>
@@ -25,15 +25,15 @@
 <h2>Weekly Activities / Hobbies</h2>
 <ul>
     <li>
-        <label for="sunday">Sunday's Activities:  </label>{{activities.sunday}}<br>
-        <label for="monday">Monday's Activities:  </label>{{ activities.monday }}<br>
-        <label for="tuesday">Tuesday's Activities:  </label>{{ activities.tuesday }}<br>
-        <label for="wednesday">Wednesday's Activities:  </label>{{activities.wednesday}}<br>
-        <label for="thursday">Thursday's Activities:  </label>{{ activities.thursday }}<br>
-        <label for="friday">Friday's Activities:  </label>{{ activities.friday }}<br>
-        <label for="saturday">Saturday's Activities:  </label>{{ activities.saturday }}<br>
+        <label for="sunday">Sunday's Activities: </label>{{activities.sunday}}<br>
+        <label for="monday">Monday's Activities: </label>{{ activities.monday }}<br>
+        <label for="tuesday">Tuesday's Activities: </label>{{ activities.tuesday }}<br>
+        <label for="wednesday">Wednesday's Activities: </label>{{activities.wednesday}}<br>
+        <label for="thursday">Thursday's Activities: </label>{{ activities.thursday }}<br>
+        <label for="friday">Friday's Activities: </label>{{ activities.friday }}<br>
+        <label for="saturday">Saturday's Activities: </label>{{ activities.saturday }}<br>
         <form method="GET" action="/activities/{{user._id}}">
-        <input type="submit" value="Edit" />
+            <input type="submit" value="Edit" />
         </form>
     </li><br>
 </ul>

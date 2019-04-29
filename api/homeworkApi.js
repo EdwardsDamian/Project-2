@@ -1,6 +1,7 @@
 const mongoose = require('../DB/connection.js');
 const ObjectId = mongoose.Schema.Types.ObjectId
 
+// setup Schema
 const HomeworkSchema = mongoose.Schema({
 
     user: {type:ObjectId, ref:"User"},
@@ -11,12 +12,13 @@ const HomeworkSchema = mongoose.Schema({
 
 const HomeworkCollection = mongoose.model("Homework", HomeworkSchema);
 
+// Create new homework entry
 function createHomework (homework) {
     return HomeworkCollection.create(homework);
 }
 
 function getHomeworkByUserId(userId) {
-    return HomeworkCollection.findOne({user:userId})
+    return HomeworkCollection.findOne({user:userId}).populate("user")
 }
 
 function getHomework() {
