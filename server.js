@@ -50,7 +50,6 @@ app.get('/users/:id', (req, res) => {
 
 app.post('/users', (req, res) => {
     userApi.createUser(req.body)
-    .then(() => userApi.getUserById(req.params.id))
     .then((user) => {
         console.log(user)
         res.render('users/created', { user } );
