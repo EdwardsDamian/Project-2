@@ -23,7 +23,9 @@ The impetus for the development of Student Activities Tracker (SATR) App was the
 
 For the minimum viable product (MVP), the baseline assumes only homework assignment's typical of The ANC School's 3rd grade (located in Atlanta, GA). Users of the SATR App would be expected to input relevent details about their homework assignment(s) along with their afterschool activities. The model architecture for this App employs 3 schemas, identified as User, Homework, and Activities. 
 
-MEHN... ReST...
+This web application has been structured utilizing the Model-View-Controller (MVC) pattern. Best practices in terms of defining _RESTful_ routes were applied consistent with the REST (Representational State Transfer) guidelines. Full CRUD (Create, Read, Update & Delete) capability is provided for each of the three models indicated above. 
+
+
 
 
 ## Wireframe
@@ -35,12 +37,9 @@ MEHN... ReST...
 
 ## Features
 
-* 
-* 
-* 
-
-
-
-
+* Utilizes Node.js along with ExpressJS to set up and configure a server that listens for HTTP requests from your browser.
+* Server-side rendering of data (values) via Handlebars
+* Mongoose, the object document mapping (ODM) library, is used to facilitate getting data in and out the nosql database MongoDB.
 
 ## Future Development
+
