@@ -9,7 +9,8 @@ const activitiesApi = require('./api/activitiesApi')
 
 //Set up handlebars
 app.set('view engine', 'hbs')
-app.use(express.static(__dirname + '/public'))
+app.use(express.static(__dirname + '/Public'))
+// app.use(express.static(__dirname + '/images'))
 
 //Middleware for handling html forms where body is a query string
 app.use(express.urlencoded({extended:true}))
