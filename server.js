@@ -1,3 +1,5 @@
+// Gather the dependencies
+
 const express = require('express')
 const app = express()
 const methodOverride = require('method-override')
@@ -17,6 +19,16 @@ app.use(express.json())
 
 // The html forms 'hack' that allows PUT/PATCH/DELETE
 app.use(methodOverride('_method'))
+
+// Set the routes
+
+app.get('/', (req, res) => {
+    res.render('home')
+})
+
+app.get('/users/new', (req, res) => {
+    res.render('users/new')
+})
 
 // Get individual user's id use as the reference to link to homework and activities
 app.get('/users/:id/agenda', (req, res) => {
@@ -144,8 +156,11 @@ app.delete('/activities/:id', (req, res) => {
         res.render('activities/deleted', {activities})
     })
 })
+
+
 const PORT = process.env.PORT || 3000
 
+// Start the server
 app.listen(PORT, () => {
     console.log(`App is listening on PORT ${PORT}`)
 })
