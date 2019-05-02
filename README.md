@@ -11,15 +11,15 @@ For this project, I attempted to develop an application that could be used by el
 * Languages - HTML5, CSS3, Javascript, MongoDB, Mongoose, Express, HandleBars & Node JS 
 * Designed utilizing methodologies learned during initial weeks of GA's SEI 21 program 
 * Project Planning & User Stories - [Trello](https://trello.com/invite/b/I2WZ2Cgw/5371d2a9465194d0db3620690150dde3/ga-sei-21-project-2)
-* Text
+* Text Editor - Visual Studio Code v.1.33.0
 
 ## Wireframe
-![Image](project2-wframe.png)
+![Image](project-2-wireframe.png)
 
 ## WhiteBoard
-![Image](project2-whiteboard.jpg)
+![Image](project2-whiteboard.png)
 
- Editor - Visual Studio Code v.1.33.0
+ 
 
 ## Main Application Process & Related Details
 
