@@ -2,7 +2,7 @@
 
 ## Overview
 
-For this project, I attempted to develop an application that could be used by elementary school sudents to keep track of their daily homework assignments and weekly extracurricular activities.  The goal was to develop an 'App' that would be easy to use, even for a 3rd grader.
+For this project, I attempted to develop an application that could be used by elementary school sudents to keep track of their daily homework assignments and weekly extracurricular activities.  The goal was to develop an 'App' that would be easy to use, even for a 3rd grader.  
 
 **Live site:** <https://safe-mesa-73187.herokuapp.com/users>
 
@@ -14,7 +14,7 @@ For this project, I attempted to develop an application that could be used by el
 * Text
 
 ## Wireframe
-![Image](project2-wframe.jpg)
+![Image](project2-wframe.png)
 
 ## WhiteBoard
 ![Image](project2-whiteboard.jpg)
@@ -44,5 +44,7 @@ Pilot testing on the basic functions the MVP was performed with the aid of an ac
 * Extend app use to cover multiple homework types assignments;
 * Add date attributes to both homework and activities models;
 * Add username and login features;
-* Set conditions on model inputs to prevent empty values from being accepted (e.g., clicking the create button when no data values have been entered). 
+* Include module parents to review and provide comments;
+* Set conditions on model inputs to prevent empty values from being accepted (e.g., clicking the create button when no data values have been entered); and,
+*Refactor the CSS code.
 
