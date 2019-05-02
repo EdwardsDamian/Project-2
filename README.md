@@ -4,7 +4,7 @@
 
 For this project, I attempted to develop web application that could be used by elementary school sudents to track their daily homework assignments and weekly extracurricular activities.  The goal was to develop an 'App' that would be easy to use, even for a 3rd grader.  
 
-**Live site:** <https://safe-mesa-73187.herokuapp.com/users>
+**Live site:** <https://safe-mesa-73187.herokuapp.com>
 
 ## Technologies Used
 
