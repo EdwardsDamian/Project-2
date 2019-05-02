@@ -31,7 +31,7 @@ This web application has been structured utilizing the Model-View-Controller (MV
 
 Pilot testing on the basic functions the MVP was performed with the aid of an actual 3rd grader.  The information gleaned from that experience will considered for future updates ot the MVP. 
 
-![Image](project2-app-pilot-test.jpeg)
+![Image](project2-app-pilot-test.png)
 
 ## Features
 
@@ -46,5 +46,5 @@ Pilot testing on the basic functions the MVP was performed with the aid of an ac
 * Add username and login features;
 * Include module parents to review and provide comments;
 * Set conditions on model inputs to prevent empty values from being accepted (e.g., clicking the create button when no data values have been entered); and,
-*Refactor the CSS code.
+* Refactor the CSS code.
 
