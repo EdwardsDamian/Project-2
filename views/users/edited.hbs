@@ -1,12 +1,13 @@
+<div class="container1">
 <h1>Edit User Information</h1>
 
 <form action="/users/{{user._id}}?_method=PUT" method="POST" >
     <label for="name">NAME:</label>
-    <input type="text" name="name" value="{{user.name}}" />
+    <input type="text" name="name" value="{{user.name}}" /><br>
     <label for="age">AGE:</label>
-    <input type="text" name="age" value="{{user.age}}" />
+    <input type="text" name="age" value="{{user.age}}" /><br>
     <label for="grade">GRADE:</label>
-    <input type="text" name="grade" value="{{user.grade}}" />
+    <input type="text" name="grade" value="{{user.grade}}" /><br>
     <input type="submit" value="Update User" />
 </form><br><br>
 
@@ -14,3 +15,4 @@
 <form action="/users/{{user._id}}?_method=DELETE" method="POST" >
 <input type="submit" value="Delete User" />
 </form>
+</div>
