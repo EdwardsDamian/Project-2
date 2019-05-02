@@ -1,5 +1,14 @@
-body {
-    text-align: center;
+
+
+
+
+
+
+
+ body {
+    /* text-align: center; */
+    margin: 0 auto;
+    
 }
 
 #main {
@@ -8,22 +17,170 @@ body {
 .mainpic{
     background-image: url("/images/Children.png");
     background-size: 100% 100%;
-    /* background-position: center; */
     height: 100vh;
-    /* width: 100vw; */
     border: solid black;
     
 }
 
-#container {
-    margin-top: 333px;
+.container {
+    margin-top: 175px;
 
+}
+
+.container1 {
+    
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
 }
 
 h1 {
     font-family: 'Fontdiner Swanky', cursive;
     text-align: center;
-    font-size: 50px;
+    font-size: 48px;
     color: #FFDF00;
     margin: 60px 0 0 0;
   }
+
+h2 {
+    font-family: 'Oswald', sans-serif;
+    font-weight: bold;
+    font-size: 45px;
+    text-align: center;
+    color: purple;
+    padding: 10px;
+
+}
+
+a {
+    font-family: 'Oswald', sans-serif;
+    font-weight: bold;
+    font-size: 35px;
+    text-align: center;
+    color: green;
+    }
+
+input {
+border: 2pt;
+display: inline-block;
+margin: 3px;
+padding: 2px;
+font-size: 15px;
+box-sizing: border-box;
+}
+input[type="submit"] {
+background: green;
+color: white;
+padding: 14px, 20px;
+}
+
+label {
+    color: green;
+    font-family: 'Oswald', sans-serif;
+    font-weight: bold;
+    font-size: 30px;
+    text-align: right;
+    color: green;
+    Padding: 0 11px 0 11px;
+    line-height: .01;
+}
+
+    #users, div  {
+    border-top: 333px; 
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;   
+ } 
+
+ #users input[type="submit"] {
+    width: 50px;
+    margin-left: 50px;
+ }
+
+ #users form {
+
+ }
+
+.users ul, label{
+    font-size: 25px;    
+}
+
+#users1 {
+    margin-top: 275px;
+}
+
+#agenda {
+    font-size: 40px;
+    font-family: 'Fontdiner Swanky', cursive;
+    text-align: center;
+    color: #FFDF00;
+    padding-top: 315px;
+
+}
+
+.agenda {
+    font-size: 25px;
+    padding-top: 0px;
+    font-family: 'Oswald', sans-serif;
+    font-weight: bold;
+    text-align: center;
+    color: purple;
+    
+}
+
+.agenda1, ul, label {
+    font-size: 20px;
+    margin: 0%;
+    text-align: center;
+    justify-content: center;
+    justify-items: center;
+    width:200px;
+}
+
+.agenda2 input[type="submit"] {
+    width: 50px;
+    margin-left: 50px;
+}
+
+
+.agenda2, ul, li {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    justify-content: center;
+    
+
+}
+
+.agenda3, ul, li, label {
+    display: inline-grid;
+    grid-template-columns: auto;
+    text-align: center;
+    justify-items: right;
+    align-content: left;
+    padding: 5px;
+}
+ul {
+    margin-top: 0px;
+    display:flex;
+    flex-direction: column;
+    padding: 0%;
+
+}
+
+li {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-size: 20px;
+   
+}  
+
+.hw-edit {
+    margin-top: 166px;
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+    
+}

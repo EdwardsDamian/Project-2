@@ -1,19 +1,23 @@
-<h1>Users</h1>
-<ul>
+<div id="users">
+<h1 id="users1">Users</h1>
+
+<ul class="users">
     {{#each users}}
-    <li>
+    <li class="users">
+
         {{!-- <a href="/users/{{_id}}"> --}}
-        <label for="id">ID: </label> {{_id}} <br>
-        <label for="name">NAME: </label> {{ name }} <br>
-        <label for="age">AGE: </label> {{ age }} <br>
-        <label for="grade">GRADE: </label> {{ grade}} <br>
-       <a href="/users/{{_id}}">
+        <label for="id">ID: </label> {{_id}} 
+        <label for="name">NAME: </label> {{ name }} 
+        <label for="age">AGE: </label> {{ age }}
+        <label for="grade">GRADE: </label> {{ grade}}
+        <a href="/users/{{_id}}"> 
         <input type="submit" value="Edit" />
-        </a>
+        </a> 
         {{!-- </a> --}}
-    </li><br>
+        
+     </li><br>
     {{/each}}
-</ul>
+</ul> 
 
 <form method="POST" action="/users">
     <label for="name">NAME:</label>
@@ -24,4 +28,5 @@
     <input type="text" name="grade" value="" />
     <input type="submit" value="Create New User" />
 </form><br>
+</div>
 

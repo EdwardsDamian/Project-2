@@ -64,7 +64,7 @@ app.get('/users/:id', (req, res) => {
 app.post('/users', (req, res) => {
     userApi.createUser(req.body)
     .then((user) => {
-        console.log(user)
+        // console.log(user)
         res.render('users/created', { user } );
     });
 });
@@ -74,7 +74,7 @@ app.put('/users/:id', (req, res) => {
     userApi.updateUser(req.params.id, req.body)
         .then(() => userApi.getUserById(req.params.id)) 
       .then((user) => {
-          console.log(user)
+        //   console.log(user)
         res.render('users/updated', {user});
       });
 });
@@ -90,8 +90,8 @@ app.delete('/users/:id', (req, res) => {
 app.get('/homework/:id', (req, res) => {
     homeworkApi.getHomeworkByUserId(req.params.id)
     .then(homework => {
-        console.log(req.params.id)
-        console.log(homework)
+        // console.log(req.params.id)
+        // console.log(homework)
         res.render('homework/edited', {homework, userId: req.params.id})
     })
 })
@@ -124,29 +124,29 @@ app.delete('/homework/:id', (req, res) => {
 app.get('/activities/:id', (req, res) => {
     activitiesApi.getActivitiesByUserId(req.params.id)
     .then(activities => {
-        console.log(req.params.id)
-        console.log(activities)
+        // console.log(req.params.id)
+        // console.log(activities)
         res.render('activities/edited', {activities, userId: req.params.id})
     })
 })
 
 app.post('/activities', (req, res) => {
-    console.log("Creating activities ", req.body)
+    // console.log("Creating activities ", req.body)
     activitiesApi.createActivities(req.body)
     .then(() => activitiesApi.getActivitiesByUserId(req.body.user))
     .then(activities => {
-        console.log(activities)
+        // console.log(activities)
         res.render('activities/created', { activities })
     })
 })
 
 app.put('/activities/:id', (req, res) => {
-    console.log("Updating activities ", req.body)
+    // console.log("Updating activities ", req.body)
     activitiesApi.updateActivities(req.params.id, req.body)
     .then(() => activitiesApi.getActivitiesById(req.params.id))
 
       .then((activities) => {
-          console.log(activities)
+        //   console.log(activities)
         res.render('activities/updated', {activities});
       });
 });
