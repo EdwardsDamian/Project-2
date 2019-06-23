@@ -2,7 +2,7 @@
 
 ## Overview
 
-For this project, I attempted to develop web application that could be used by elementary school sudents to track their daily homework assignments and weekly extracurricular activities.  The goal was to develop an 'App' that would be easy to use, even for a 3rd grader.  
+For this project, I attempted to develop web application that could be used by elementary school students to track their daily homework assignments and weekly extracurricular activities.  The goal was to develop an 'App' that would be easy to use, even for a 3rd grader.  
 
 **Live site:** <https://safe-mesa-73187.herokuapp.com>
 
@@ -26,7 +26,7 @@ The impetus for the development of Student Activities Tracker (SATR) App was the
 
 This web application has been structured utilizing the Model-View-Controller (MVC) pattern. Best practices in terms of defining _RESTful_ routes were applied consistent with REST (Representational State Transfer)guidelines. Full CRUD (Create, Read, Update & Delete) capability is provided for each of the three models indicated below. 
 
-In establishing this project's minimum viable product (MVP), the baseline assumes homework assignment's typical of The ANC School's 3rd grade (an Atlanta, GA based charter school). This App's model architecture employs 3 schemas, programmed in the code as User, Homework, and Activities. The overall process requires SATR users to input relevent details of their homework assignment(s) along with any afterschool activities. 
+In establishing this project's minimum viable product (MVP), the baseline assumes homework assignment's typical of The ANC School's 3rd grade (an Atlanta, GA based charter school). This App's model architecture employs 3 schemas, programmed in the code as User, Homework, and Activities. The overall process requires SATR users to input relevant details of their homework assignment(s) along with any afterschool activities. 
 
 Pilot testing the basic functional MVP was performed with the aid of an actual 3rd grader (see below).  Information gleaned from that experience will be utilized for future updates to this web application. 
 
